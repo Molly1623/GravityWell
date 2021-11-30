@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class Restart : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Collider2D coll;
-
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
- 
+    public void Replay()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log("1");
+
+    }
 }
