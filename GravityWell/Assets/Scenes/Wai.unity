@@ -213,7 +213,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1412241539}
     m_Modifications:
     - target: {fileID: 126064579503718558, guid: daee65f4bbc2efb4cb6b9e4696bac902, type: 3}
       propertyPath: m_LocalPosition.x
@@ -453,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3356167095100896545, guid: daee65f4bbc2efb4cb6b9e4696bac902, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3356167095100896545, guid: daee65f4bbc2efb4cb6b9e4696bac902, type: 3}
       propertyPath: m_LocalScale.x
@@ -481,15 +481,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3356167095100896545, guid: daee65f4bbc2efb4cb6b9e4696bac902, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3356167095100896545, guid: daee65f4bbc2efb4cb6b9e4696bac902, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3356167095100896545, guid: daee65f4bbc2efb4cb6b9e4696bac902, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3356167095100896545, guid: daee65f4bbc2efb4cb6b9e4696bac902, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2729,6 +2729,7 @@ Transform:
   - {fileID: 1309426177}
   - {fileID: 224703615}
   - {fileID: 181790972}
+  - {fileID: 447336522}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3296,7 +3297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4228074909945803712, guid: 536c3bc9e0970f54e9391ef5907bcf0a, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4228074909945803712, guid: 536c3bc9e0970f54e9391ef5907bcf0a, type: 3}
       propertyPath: m_TagString
@@ -3409,7 +3410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4967688439765341065, guid: 3cb658a44d9ffc7408becefe9d68befc, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4967688439765341067, guid: 3cb658a44d9ffc7408becefe9d68befc, type: 3}
       propertyPath: magnetForce
