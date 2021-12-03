@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using GravityWell.Weapon;
 
-public class AbsorbObject : MonoBehaviour
+namespace GravityWell.Bullet
+{
+    public class AbsorbObject : MonoBehaviour
 {
     public float magnetForce = 100;
 
@@ -44,4 +47,5 @@ public class AbsorbObject : MonoBehaviour
             }
         }
     }
+}
 }

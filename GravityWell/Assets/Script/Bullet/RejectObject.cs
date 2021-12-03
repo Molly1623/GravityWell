@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RejectObject : MonoBehaviour
+namespace GravityWell.Bullet
+{
+    public class RejectObject : MonoBehaviour
 {
     public float magnetForce = 100;
 
@@ -44,4 +46,5 @@ public class RejectObject : MonoBehaviour
             }
         }
     }
+}
 }
