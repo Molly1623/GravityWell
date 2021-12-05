@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using GravityWell.Weapon;
 
 namespace GravityWell.PlayerController
 {
@@ -14,6 +15,7 @@ namespace GravityWell.PlayerController
         public Collider2D coll;
         public Transform Weapon;
         public Transform center;
+        public Animator anim;
         public float speed;
         public float jumpforce;
 
@@ -33,20 +35,30 @@ namespace GravityWell.PlayerController
         //角色控制
         void Movement()
         {
+            //获取鼠标位置
+            Vector3 mousePosition = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,Camera.main.ScreenToWorldPoint(Input.mousePosition).y,0);
+            
             horizontalmove = Input.GetAxis("Horizontal");
-            facedirection = Input.GetAxisRaw("Horizontal");
-
+            float mosdirction = mousePosition.x - transform.position.x;
             rb.velocity = new Vector2(horizontalmove * speed,rb.velocity.y);
             
-            if(facedirection != 0)
+            if(mosdirction != 0)
             {
-                transform.localScale = new Vector3(facedirection,1,1);
+                if(mosdirction > 0)
+                    transform.localScale = new Vector3(1,1,1);
+                else
+                    transform.localScale = new Vector3(-1,1,1);
             }
+            if(horizontalmove != 0) 
+                anim.SetBool("isMove",true);
+            else    
+                anim.SetBool("isMove",false);
             if(Input.GetButtonDown("Jump"))
             {
                 // if(coll.IsTouchingLayers(Ground))
                 {
                     rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+                    anim.SetBool("isJump",true);
                 }
             }
         }
@@ -68,6 +80,24 @@ namespace GravityWell.PlayerController
             Quaternion rotation = Quaternion.AngleAxis(angle,Vector3.forward);
             Weapon.transform.rotation = Quaternion.Euler(0,0,angle);
             Debug.DrawRay(Weapon.position,dir,Color.white,0.01f,false);
+        }
+
+        void SwitchAnim()
+        {
+        anim.SetBool("Idle",false);
+        if(anim.GetBool("isJump"))
+        {
+            if(rb.velocity.y < 0)
+            {
+                anim.SetBool("isJump",false);
+                anim.SetBool("isFall",true);
+            }
+        }
+        else if(coll.IsTouchingLayers(Ground))
+        {
+            anim.SetBool("isFall",false);
+            anim.SetBool("Idle",true);
+        }
         }
 
     }
