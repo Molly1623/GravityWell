@@ -55,7 +55,7 @@ namespace GravityWell.PlayerController
                 anim.SetBool("isMove",false);
             if(Input.GetButtonDown("Jump"))
             {
-                // if(coll.IsTouchingLayers(Ground))
+                 if(coll.IsTouchingLayers(Ground))
                 {
                     rb.velocity = new Vector2(rb.velocity.x, jumpforce);
                     anim.SetBool("isJump",true);

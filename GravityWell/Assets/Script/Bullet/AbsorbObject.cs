@@ -7,7 +7,6 @@ namespace GravityWell.Bullet
     public class AbsorbObject : MonoBehaviour
 {
     public float magnetForce = 100;
-
     List<Rigidbody2D> caughtRigidbodies = new List<Rigidbody2D>();
 
     void FixedUpdate()
@@ -47,5 +46,6 @@ namespace GravityWell.Bullet
             }
         }
     }
+
 }
-}
+}   

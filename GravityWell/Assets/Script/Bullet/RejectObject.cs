@@ -6,14 +6,17 @@ namespace GravityWell.Bullet
     public class RejectObject : MonoBehaviour
 {
     public float magnetForce = 100;
+    private Vector2 rejectForce;
+    private Vector2 dir;
 
     List<Rigidbody2D> caughtRigidbodies = new List<Rigidbody2D>();
 
     void FixedUpdate()
     {
+        
         for (int i = 0; i < caughtRigidbodies.Count; i++)
         {
-            caughtRigidbodies[i].AddForce(new Vector2(caughtRigidbodies[i].position.x - transform.position.x,caughtRigidbodies[i].position.y-transform.position.y) * magnetForce * Time.deltaTime);
+            caughtRigidbodies[i].AddForce(Vector2.up * magnetForce);
         }
     }
 
@@ -43,6 +46,7 @@ namespace GravityWell.Bullet
                 //Remove Rigidbody
                 caughtRigidbodies.Remove(r);
                 Debug.Log(other.tag);
+                r.velocity = new Vector2(r.velocity.x,40);
             }
         }
     }

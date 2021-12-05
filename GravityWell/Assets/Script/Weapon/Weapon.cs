@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     private RaycastHit2D hitInfo;
     private Vector2 TowardHit;
     private Vector2 TowardMous;
+    public float bulletrange;
     public Transform firePoint;
     public GameObject bullet_0;
     public GameObject bullet_1;
